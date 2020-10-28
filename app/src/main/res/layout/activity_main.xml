@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.notes.data.NotesViewModel" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_host_fragment_container"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_nav"
+        android:name="androidx.navigation.fragment.NavHostFragment" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

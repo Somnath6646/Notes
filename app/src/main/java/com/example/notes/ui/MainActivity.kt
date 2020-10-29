@@ -1,21 +1,25 @@
 package com.example.notes.ui
 
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.ItemTouchHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.example.notes.R
 import com.example.notes.data.NotesDatabase
 import com.example.notes.data.NotesRepository
 import com.example.notes.data.NotesViewModel
 import com.example.notes.data.NotesViewModelFactory
 import com.example.notes.databinding.ActivityMainBinding
-import com.example.notes.databinding.FragmentNotesListBinding
+import com.example.notes.utils.SwipeDeletionCallBack
+import com.google.android.material.snackbar.Snackbar
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: NotesViewModel
@@ -38,6 +42,8 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+
 
     override fun onBackPressed() {
         super.onBackPressed()

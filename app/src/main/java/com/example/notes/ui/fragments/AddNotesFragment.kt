@@ -1,10 +1,12 @@
 package com.example.notes.ui.fragments
 
+import android.hardware.input.InputManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.notes.R
 import com.example.notes.data.NotesViewModel
@@ -30,8 +32,9 @@ class AddNotesFragment : BaseFragment<FragmentAddNotesBinding, NotesViewModel>()
     }
 
     override fun navigateToNoteList() {
-        val action = AddNotesFragmentDirections.actionAddNotesFragmentToNotesListFragment()
-        findNavController().navigate(action)
+
+        findNavController().popBackStack()
+
     }
 
 

@@ -61,4 +61,6 @@ dependencies {
     // Annotation processor
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 
+    implementation "androidx.percentlayout:percentlayout:1.0.0"
+
 }

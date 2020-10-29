@@ -14,6 +14,9 @@ class NoteListAdapter(private val clickListener: (Notes) -> Unit): RecyclerView.
 
     private val notesList = ArrayList<Notes>()
 
+    val notes
+    get() = notesList
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteListViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         val binding: ListItemBinding = DataBindingUtil.inflate(inflater, R.layout.list_item, parent , false)
@@ -31,6 +34,16 @@ class NoteListAdapter(private val clickListener: (Notes) -> Unit): RecyclerView.
     fun setList(notes:List<Notes>){
         notesList.clear()
         notesList.addAll(notes)
+    }
+
+    fun remove(position: Int){
+        notesList.removeAt(position)
+        notifyItemRemoved(position)
+    }
+
+    fun restoreNote(position: Int, notes: Notes){
+        notesList.add(position,notes)
+        notifyItemInserted(position)
     }
 
 }
